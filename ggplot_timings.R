@@ -47,7 +47,7 @@ g1 <- ggplot(data, aes(x = nodes, y = time.max, colour = type)) +
         legend.background=element_rect(fill=alpha("white",  0)),  legend.key=element_rect(fill=alpha("white",  0)),
         axis.title.y = element_text(margin=margin(r=6,  unit="pt")),
         axis.title.x = element_text(margin=margin(t=6,  unit="pt")),
-        strip.background = element_rect(fill="#5E3212"),
+        strip.background = element_rect(fill="#474747"),
         strip.text = element_text(colour="white"))
 
 ## axis.label.y = element_text(vjust = 2))
