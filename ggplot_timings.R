@@ -39,9 +39,12 @@ g1 <- ggplot(data, aes(x = nodes, y = time.max, colour = type)) +
     labs(colour = "config") +
     labs(y = "time [s]") +
     labs(x = "#nodes") +
+    scale_colour_discrete(labels=c("cosma gpu (COSTA)",  "cosma mkl (COSTA)",  "libsci",  "libsci-acc",  "mkl")) +
   facet_wrap(~op, labeller = labeller(op = c(cp_gemm = "matrix multiplication", CP2K = "total time"))) +
-  theme(text  = element_text(size=10, family="modern"),  legend.title = element_blank())
+  theme(text  = element_text(size=10, family="modern"),  legend.title = element_blank(),  legend.position=c(0.85,  0.8),
+        legend.background=element_rect(fill=alpha("white",  0)),  legend.key=element_rect(fill=alpha("white",  0)))
 
+## legend.key=element_rect(colour=NA, fill=NA))
 ## +
 ## theme(
 ##     panel.background = element_rect(fill = "white", colour = "black"),
@@ -56,5 +59,4 @@ g1 <- ggplot(data, aes(x = nodes, y = time.max, colour = type)) +
 ##   legend.key = element_rect(fill = "white")
 ## )
 
-
-ggsave("loglog-facets.pdf", g1, width=6, height=6,  units="in")
+ggsave("loglog-facets.pdf", g1, width=8/1.5, height=6/1.5,  units="in")
