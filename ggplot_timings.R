@@ -7,24 +7,26 @@ font_add("modern", "/usr/share/fonts/OTF/lmroman10-regular.otf")
 
 showtext_auto()
 
+theme_set(
+  theme_light() + theme(legend.position = "bottom")
+)
 
 data <- read.csv("timings.csv")
 data$nodes <- as.numeric(data$nodes)
-g1 <- ggplot(data, aes(x = nodes, y = time.max, colour = type, linetype = op)) +
-    geom_line() +
-    geom_point() +
-    scale_x_log10(breaks = c(128, 256, 512, 1024)) +
-    scale_y_log10() +
-    labs(linetype = "operation") +
-    labs(colour = "config") +
-    labs(y = "time [s]") +
-    labs(x = "#nodes") + theme(text = element_text(size=10, family="modern"))
+
+## g1 <- ggplot(data, aes(x = nodes, y = time.max, colour = type, linetype = op)) +
+##     geom_line() +
+##     geom_point() +
+##     scale_x_log10(breaks = c(128, 256, 512, 1024)) +
+##     scale_y_log10() +
+##     labs(linetype = "operation") +
+##     labs(colour = "config") +
+##     labs(y = "time [s]") +
+##     labs(x = "#nodes") + theme(text = element_text(size=10, family="modern"))
 
 
-ggsave("loglog.pdf", g1, width=6, height=6)
-theme_set(
-    theme_light() + theme(legend.position = "bottom")
-)
+## ggsave("loglog.pdf", g1, width=6, height=6)
+
 ## sub
 library(ggplot2)
 library(dplyr)
@@ -63,5 +65,5 @@ g1 <- ggplot(data, aes(x = nodes, y = time.max, colour = type)) +
 ##   legend.key = element_rect(fill = "white")
 ## )
 
-ggsave("loglog-facets.pdf", g1, width=8/1.5, height=6/1.5,  units="in")
+ggsave("cp2k-timings.pdf", g1, width=8/1.5, height=6/1.5,  units="in")
 ## ggsave("loglog-facets.pdf", g1, width=8/1.5, height=6/1.5,  units="in")
