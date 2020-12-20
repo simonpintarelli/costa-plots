@@ -33,18 +33,22 @@ library(dplyr)
 data <- read.csv("timings.csv")
 data$nodes <- as.numeric(data$nodes)
 g1 <- ggplot(data, aes(x = nodes, y = time.max, colour = type)) +
-    geom_line() +
-    geom_point() +
-    scale_x_log10(breaks = c(128, 256, 512, 1024)) +
-    scale_y_log10() +
-    labs(linetype = "operation") +
-    labs(colour = "config") +
-    labs(y = "time [s]") +
-    labs(x = "#nodes") +
-    scale_colour_discrete(labels=c("cosma gpu (COSTA)",  "cosma mkl (COSTA)",  "libsci",  "libsci-acc",  "mkl")) +
-  facet_wrap(~op, labeller = labeller(op = c(cp_gemm = "matrix multiplication", CP2K = "total time"))) +
-  theme(text  = element_text(size=10, family="modern"),  legend.title = element_blank(),  legend.position=c(0.32,  0.8),
-        legend.background=element_rect(fill=alpha("white",  0)),  legend.key=element_rect(fill=alpha("white",  0)),
+  geom_line() +
+  geom_point() +
+  scale_x_log10(breaks = c(128, 256, 512, 1024)) +
+  scale_y_log10() +
+  labs(linetype = "operation") +
+  labs(colour = "config") +
+  labs(y = "time [s]") +
+  labs(x = "#nodes") +
+  scale_colour_discrete(labels=c("cosma gpu (COSTA)",  "cosma cpu (COSTA)",  "libsci",  "libsci gpu",  "mkl")) +
+  facet_wrap(~op, labeller = labeller(op = c(cp_gemm = "matrix-matrix multiplication", CP2K = "total time"))) +
+  theme(text  = element_text(size=10, family="modern"),
+        legend.title = element_blank(),
+        legend.position=c(0.33,  0.81),
+        legend.background=element_rect(fill=alpha("white",  0)),
+        legend.key=element_rect(fill=alpha("white",  0)),
+        legend.key.size = unit(12,  "pt"),
         axis.title.y = element_text(margin=margin(r=6,  unit="pt")),
         axis.title.x = element_text(margin=margin(t=6,  unit="pt")),
         strip.background = element_rect(fill="#474747"),
