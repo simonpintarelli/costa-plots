@@ -65,5 +65,5 @@ g1 <- ggplot(data, aes(x = nodes, y = time.max, colour = type)) +
 ##   legend.key = element_rect(fill = "white")
 ## )
 
-ggsave("cp2k-timings.pdf", g1, width=8/1.5, height=6/1.5,  units="in")
+ggsave("cp2k-timings.pdf", g1, width=5, height=3.5,  units="in")
 ## ggsave("loglog-facets.pdf", g1, width=8/1.5, height=6/1.5,  units="in")
