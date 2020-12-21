@@ -30,13 +30,17 @@ data$nodes <- as.numeric(data$nodes)
 ## sub
 library(ggplot2)
 library(dplyr)
+
 data <- read.csv("timings.csv")
 data$nodes <- as.numeric(data$nodes)
 g1 <- ggplot(data, aes(x = nodes, y = time.max, colour = type)) +
   geom_line() +
   geom_point() +
-  scale_x_log10(breaks = c(128, 256, 512, 1024)) +
-  scale_y_log10() +
+  scale_x_log10(breaks = c(128, 256, 512, 1024), minor_breaks=c()) +
+  scale_y_log10(
+    breaks=c(100,  300,  1000,  3000),
+    minor_breaks=c(70,  80,  90,  100,  200,  300,  400,  500,  600,  700,  800,  900, 2000,  3000,  4000,  5000,  6000,  7000)
+  ) + annotation_logticks(size=0.2,  sides='l',  alpha=0.5) +
   labs(linetype = "operation") +
   labs(colour = "config") +
   labs(y = "time [s]") +
@@ -51,6 +55,7 @@ g1 <- ggplot(data, aes(x = nodes, y = time.max, colour = type)) +
         legend.key.size = unit(12,  "pt"),
         axis.title.y = element_text(margin=margin(r=6,  unit="pt")),
         axis.title.x = element_text(margin=margin(t=6,  unit="pt")),
+        panel.grid.minor = element_line(linetype='dashed'),
         strip.background = element_rect(fill="#474747"),
         strip.text = element_text(colour="white"))
 
