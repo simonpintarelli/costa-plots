@@ -45,13 +45,14 @@ g1 <- ggplot(data, aes(x = nodes, y = time.max, colour = type)) +
   labs(colour = "config") +
   labs(y = "time [s]") +
   labs(x = "#nodes") +
-  scale_colour_discrete(labels=c("cosma gpu (COSTA)",  "cosma cpu (COSTA)",  "libsci",  "libsci gpu",  "mkl")) +
+  scale_colour_discrete(labels=c("COSMA GPU+COSTA",  "COSMA CPU+COSTA",  "Cray LibSci CPU",  "Cray LibSci GPU",  "Intel MKL")) +
   facet_wrap(~op, labeller = labeller(op = c(cp_gemm = "matrix-matrix multiplication", CP2K = "total time"))) +
-  theme(text  = element_text(size=10, family="modern"),
+  theme(text  = element_text(size=12, family="modern"),
         legend.title = element_blank(),
-        legend.position=c(0.33,  0.81),
+        legend.position=c(0.32,  0.86),
         legend.background=element_rect(fill=alpha("white",  0)),
         legend.key=element_rect(fill=alpha("white",  0)),
+        legend.text = element_text(size=8),
         legend.key.size = unit(12,  "pt"),
         axis.title.y = element_text(margin=margin(r=6,  unit="pt")),
         axis.title.x = element_text(margin=margin(t=6,  unit="pt")),
