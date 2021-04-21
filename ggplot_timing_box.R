@@ -63,7 +63,7 @@ g1 <- ggplot(data, aes(x = nodes, y = time.max, colour = type)) +
     panel.grid.minor = element_line(linetype = "dashed"),
     legend.margin = margin(r = 3, unit = "pt"),
     legend.background = element_rect(fill = alpha("white", 0.6)),
-    ## legend.box.background = element_rect(colour = "black"),
+    legend.box.background = element_rect(colour = "black"),
     strip.background = element_rect(fill = "#474747"),
     strip.text = element_text(colour = "white")
   )
@@ -84,5 +84,5 @@ g1 <- ggplot(data, aes(x = nodes, y = time.max, colour = type)) +
 ##   legend.key = element_rect(fill = "white")
 ## )
 
-ggsave("cp2k-timings.pdf", g1, width = 5, height = 3.5, units = "in")
+ggsave("cp2k-timings_box.pdf", g1, width = 5, height = 3.5, units = "in")
 ## ggsave("loglog-facets.pdf", g1, width=8/1.5, height=6/1.5,  units="in")
