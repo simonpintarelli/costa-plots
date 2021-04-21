@@ -49,7 +49,7 @@ g1 <- ggplot(data, aes(x = nodes, y = time.max, colour = type)) +
   facet_wrap(~op, labeller = labeller(op = c(cp_gemm = "matrix-matrix multiplication", CP2K = "total time"))) +
   theme(text  = element_text(size=12, family="modern"),
         legend.title = element_blank(),
-        legend.position=c(0.32,  0.86),
+        legend.position=c(0.32,  0.85),
         legend.background=element_rect(fill=alpha("white",  0)),
         legend.key=element_rect(fill=alpha("white",  0)),
         legend.text = element_text(size=8),
