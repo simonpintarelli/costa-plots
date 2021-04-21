@@ -14,6 +14,7 @@ nodes,type,file,op,calls,ASD,self avg,self max,time avg,time max
 1024,libsci_acc,PizDaint-gpu-cray-libsci_acc-1024-27870137.out,CP2K,1,1.0,0.060,0.074,289.731,289.733
 128,libsci_acc,PizDaint-gpu-cray-libsci_acc-128-27882376.out,CP2K,1,1.0,0.025,0.029,1275.498,1275.510
 256,libsci_acc,PizDaint-gpu-cray-libsci_acc-256-27885536.out,CP2K,1,1.0,0.030,0.037,751.726,751.760
+512,libsci_acc,PizDaint-gpu-cray-libsci_acc-128-27895180.out,CP2K,1,1.0,0.033,0.039,448.526,448.529
 1024,mkl,PizDaint-gpu-mkl-1024-27870131.out,CP2K,1,1.0,0.108,0.119,418.364,418.380
 128,mkl,PizDaint-gpu-mkl-128-27870130.out,CP2K,1,1.0,0.027,0.032,2345.846,2345.861
 256,mkl,PizDaint-gpu-mkl-256-27870128.out,CP2K,1,1.0,0.027,0.033,1240.071,1240.073
@@ -32,6 +33,7 @@ nodes,type,file,op,calls,ASD,self avg,self max,time avg,time max
 512,cray-libsci,PizDaint-gpu-cray-libsci-512-27870139.out,cp_gemm,46,9.7,0.000,0.000,744.835,745.030
 1024,libsci_acc,PizDaint-gpu-cray-libsci_acc-1024-27870137.out,cp_gemm,46,9.7,0.000,0.000,121.911,124.599
 128,libsci_acc,PizDaint-gpu-cray-libsci_acc-128-27882376.out,cp_gemm,46,9.7,0.000,0.000,519.479,519.946
+512,libsci_acc,PizDaint-gpu-cray-libsci_acc-128-27895180.out,cp_gemm,46,9.7,0.000,0.000,211.803,211.995
 256,libsci_acc,PizDaint-gpu-cray-libsci_acc-256-27885536.out,cp_gemm,46,9.7,0.000,0.000,338.023,338.322
 1024,mkl,PizDaint-gpu-mkl-1024-27870131.out,cp_gemm,46,9.7,0.000,0.000,297.373,300.133
 128,mkl,PizDaint-gpu-mkl-128-27870130.out,cp_gemm,46,9.7,0.000,0.000,1865.803,1878.464
